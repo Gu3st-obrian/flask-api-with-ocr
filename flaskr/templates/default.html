@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link href="{{ url_for('static', filename='img/logo.jpg') }}" rel="shortcut icon" >
+    <title>WASSU 3.0</title>
+    <!-- Feuilles de style -->
+    <link href="{{ url_for('static', filename='css/bootstrap.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/fullpage.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/examples.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <header>
+        <div id="menu">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-1 mb-3" style="background-image: url('{{ url_for('static', filename='img/navbar.jpg') }}');">
+                <div class="container" style="height: 40px;"></div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div id="fullpage">
+            <div class="section style_bg_img" id="section1" style="background-image: url('{{ url_for('static', filename='img/office-865091_1920.jpg') }}');">
+                <div class="container py-5">
+                    <div class="col-sm-6">
+                        <h1 class="display-4 text-left text-warning">WASSU 3.0</h1>
+                        <h4 class="text-left text-white">Système de paiement de facture.</h4><br/>
+                        <div class="mt-4">
+                            <p class="text-left text-warning">
+                                {{ aujourdhui }}
+                            </p>
+                        </div>
+                        <p class="mt-4 text-white text-left">
+                            <div class="pt-1 mb-5">
+                              <i class="fa fa-cog fa-spin mt-4" style="font-size: 8em; color: #ddd"></i>
+                              <i class="fa fa-cog fa-spin mt-4" style="font-size: 4em; color: #ddd"></i>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/fullpage.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scrolloverflow.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            anchors: ['chez-nous'],
+            menu: '#menu',
+            navigation: true,
+            navigationPosition: 'right',
+            scrollBar: false,
+            scrollingSpeed: 1500,
+            scrollOverflow: true,
+            lazyLoad: true
+        });
+    </script>
+</body>
+</html>
